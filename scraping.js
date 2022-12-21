@@ -71,7 +71,7 @@ const scrapingFunc = async (pageStartNumber) => {
 }
 
 const startScraping = () => {
-  scrapingFunc(1)
+  scrapingFunc(10)
 }
 
 startScraping()
