@@ -22,7 +22,7 @@ const scrapingFunc = async (pageStartNumber) => {
   let pageCount = 1
   let isLastPage = false
   while (true) {
-    const root = new Root({ pagination: { queryString: 'start', begin: pageNum, end: pageNum } })//Open pages 1-10. You need to supply the querystring that the site uses(more details in the API docs).
+    const root = new Root()//Open pages 1-10. You need to supply the querystring that the site uses(more details in the API docs).
     const pageManager = new CollectContent('.jobsearch-SerpMainContent > .jobsearch-LeftPane > nav > div', { name: 'hasNext' })
     const jobAds = new OpenLinks('.jobsearch-ResultsList > li table.jobCard_mainContent .jobTitle a', { name: 'list', getPageObject })//Opens every job ad, and calls the getPageObject, passing the formatted dictionary.
     const title = new CollectContent('h1.jobsearch-JobInfoHeader-title', { name: 'title' })
