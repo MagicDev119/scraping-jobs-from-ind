@@ -1,0 +1,44 @@
+the project for $30 is: create a web scraper to scrape ALL JOB POSTINGS IN US from indeed with the following filters: last 24 hours, full time, posted by employer
+
+
+
+for each of the job postings, create separate columns with the following information
+
+
+
+1/ name of job title
+2/ indicate with in a column with Y/N whether the keywords ("Four-day work week", "4-day work week", "4 day work week", "Four day work week") can be found anywhere in the job posting description
+3/ location of company HQ
+4/ company name
+5/ company work happiness score, learning score, and achievement score (from company profile page: https://www.indeed.com/cmp/Cerritos-Nissan?from=mobviewjob&tk=1gkoqoshuk6og800&fromjk=911571bc4877084d&attributionid=mobvjcmp)
+6/ company size
+7/ industry
+
+title - string - Title of the job
+company - string - Company Name
+location - string - Location of the job
+summary - string - Beginning of the job description
+url - string - Url of the job page
+postDate - string - A string describing how long ago the job was posted
+salary - string - A string with salary information (can be empty)
+isEasyApply - boolean - A boolean describing if the job is easy apply
+
+
+
+-this is in description
+2/ indicate with in a column with Y/N whether the keywords ("Four-day work week", "4-day work week", "4 day work week", "Four day work week") can be found anywhere in the job posting description
+
+5/ company work happiness score, learning score, and achievement score (from company profile page: https://www.indeed.com/cmp/Cerritos-Nissan?from=mobviewjob&tk=1gkoqoshuk6og800&fromjk=911571bc4877084d&attributionid=mobvjcmp)
+
+https://www.indeed.com/jobs?q=full+time&l=United+States&sc=0bf%3Aexrec%28%29%3B&vjk=77e4225356a2ffac
+https://www.indeed.com/jobs?q=full+time&l=United+States&sc=0bf%3Aexrec%28%29%3B&pp=gQAAAAAAAAAAAAAAAAAB8oDUfwADAAABAAA&vjk=8635912fd1a68016
+https://www.indeed.com/jobs?q=full+time&l=United+States&sc=0bf%3Aexrec%28%29%3B&start=10&pp=gQAPAAAAAAAAAAAAAAAB8oDUfwAqAQAIDF8XjUQguNjFOeLJKPSLsDoe0ldApizwTGp1D-lYN1ilsyh2xZRcAAA&vjk=0e93d8ebe54a42e4
+
+
+https://www.indeed.com/jobs?l=usa&sc=0kf%3Ajt%28fulltime%29%3B&fromage=1&vjk=e687d33e4bfc274b
+
+https://www.indeed.com/jobs?q=&l=usa&sc=0kf%3Ajt%28fulltime%29%3B&fromage=1&pp=gQAAAAABhTTJRLsAAAAB8oD0nAADAAABAAA&vjk=e687d33e4bfc274b
+
+https://www.indeed.com/jobs?q=&l=usa&sc=0kf%3Ajt%28fulltime%29%3B&fromage=1&start=20&pp=gQAeAAAAAAAAAAAAAAAB8n-KDQBBAQEBDEUuvduxFYVJCQOrUhw95ViMsIXQ1_8NWptJXBfYByUqTKv05CNOl_QkXMDQcbvUCDu05ux8ZLA7-7DlHgYAAA&vjk=26a3b70df188d989
+
+https://www.indeed.com/jobs?q=&l=usa&sc=0kf%3Ajt%28fulltime%29%3B&fromage=1&start=40&pp=gQA8AAABhTTJRLsAAAAB8oD0nABrAQIBDCoJAXNCCO2A-JN_dUVdEVg169wI5_iASZm8hNHKVaPfohcQbF6HuBBO1_sYWZEHg62WEg4tT6vKLlcs-Zsm-edbb7GyvQkUgpYCk7vWo0RXAokZYWgwU9VVcEPHKgS5cwJUdpnlHrkAAA&vjk=027b67fd3a40d9a5
