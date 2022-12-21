@@ -13,5 +13,4 @@ axios(config)
     console.log(JSON.stringify(response.data));
   })
   .catch(function (error) {
-    console.log(error);
   });
