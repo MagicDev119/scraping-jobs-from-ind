@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "indeed-scraper": "^3.1.4",
     "nodejs-web-scraper": "^6.1.0"
   }
 }
