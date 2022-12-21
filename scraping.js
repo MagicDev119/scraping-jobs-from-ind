@@ -11,7 +11,7 @@ const scrapingFunc = async (pageStartNumber) => {
 
   const config = {
     baseSiteUrl: `https://www.indeed.com`,
-    startUrl: `https://www.indeed.com/jobs?q=full+time&l=United+States&sc=0bf%3Aexrec%28%29%3B&fromage=1`,
+    startUrl: `https://www.indeed.com/jobs?q=full+time&l=United+States&sc=0bf%3Aexrec%28%29%3B&fromage=1&vjk=310031731c188330`,
     filePath: './images/',
     maxRetries: 1,
     cloneFiles: false,
