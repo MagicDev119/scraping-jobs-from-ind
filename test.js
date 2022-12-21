@@ -17,7 +17,7 @@ const agent = new https.Agent({
   rejectUnauthorized: false
 })
 
-axios.get('https://indeed.com', { httpsAgent: agent })
+axios.get('https://google.com', { httpsAgent: agent })
   .then(response => {
     if (response.data == 'success') {
     }
