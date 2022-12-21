@@ -2,11 +2,14 @@ const indeed = require('indeed-scraper');
 
 const queryOptions = {
   host: 'www.indeed.com',
-  query: 'United States',
+  query: 'Software',
+  city: 'Seattle, WA',
+  radius: '25',
+  level: 'entry_level',
   jobType: 'fulltime',
-  maxAge: '1',
+  maxAge: '7',
   sort: 'date',
-  limit: 3
+  limit: 100
 };
 
 indeed.query(queryOptions).then(res => {
