@@ -9,20 +9,27 @@ const scrapingFunc = async (pageStartNumber) => {
     pages.push(pageObject)
   }
 
+  const user_agents_list = [
+    'Mozilla/5.0 (iPad; CPU OS 12_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148',
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.83 Safari/537.36',
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36'
+  ]
+
   const config = {
     baseSiteUrl: `https://www.indeed.com`,
-    startUrl: `https://www.indeed.com/jobs?q=full+time&l=United+States&sc=0bf%3Aexrec%28%29%3B&fromage=1&vjk=310031731c188330`,
+    startUrl: `https://www.indeed.com/jobs?q=full+time&l=United+States&sc=0bf%3Aexrec%28%29%3B&fromage=1`,
     filePath: './images/',
     maxRetries: 1,
     cloneFiles: false,
-    logPath: './logs/'
+    logPath: './logs/',
+    headers: { 'User-Agent': user_agents_list[2] }
   }
 
   const scraper = new Scraper(config)
   let pageCount = 1
   let isLastPage = false
   while (true) {
-    const root = new Root()//Open pages 1-10. You need to supply the querystring that the site uses(more details in the API docs).
+    const root = new Root({ pagination: { queryString: 'start', begin: pageNum, end: pageNum } })//Open pages 1-10. You need to supply the querystring that the site uses(more details in the API docs).
     const pageManager = new CollectContent('.jobsearch-SerpMainContent > .jobsearch-LeftPane > nav > div', { name: 'hasNext' })
     const jobAds = new OpenLinks('.jobsearch-ResultsList > li table.jobCard_mainContent .jobTitle a', { name: 'list', getPageObject })//Opens every job ad, and calls the getPageObject, passing the formatted dictionary.
     const title = new CollectContent('h1.jobsearch-JobInfoHeader-title', { name: 'title' })
