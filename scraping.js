@@ -53,10 +53,10 @@ const scrapingFunc = async (pageStartNumber) => {
     const getPageManager = pageManager.getData()
     pageNum += 20
     pageCount++
-    if (getPageManager[getPageManager.length - 1] !== '' || getPageManager[getPageManager.length - 1].indexOf('svg') != -1) {
-      isLastPage = true
-      break
-    }
+    // if (getPageManager[getPageManager.length - 1] !== '' || getPageManager[getPageManager.length - 1].indexOf('svg') != -1) {
+    isLastPage = true
+    // break
+    // }
     if (pageCount >= 1) {
       break
     }
